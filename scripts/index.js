@@ -1,3 +1,9 @@
+/**
+ * Creates a recipe card based on the provided recipe object.
+ *
+ * @param {Object} recipe - The recipe object containing information about the recipe.
+ * @return {HTMLElement} - The created recipe card element.
+ */
 function createRecipeCard(recipe) {
 
     const recipeCard = document.createElement('div');
@@ -43,6 +49,12 @@ function createRecipeCard(recipe) {
     return recipeCard;  
 }
 
+/**
+ * Display the recipes in the search results.
+ *
+ * @param {Array} recipes - The array of recipes to display.
+ * @return {undefined} This function does not return a value.
+ */
 function displayRecipes(recipes) {
     const searchResults = document.querySelector('.recipes-card-container');
     searchResults.innerHTML = '';
