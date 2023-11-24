@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    
+    <title>Les petits plats</title>
+</head>
+<body>
+    <header>
+        <img src="assets/images/header/lampos-aritonang-24gR_9lCdes-unsplash 1.jpg" alt="header" class="banner">
+        <img src="assets/images/Logo.png" alt="logo" class="logo">
+        <div class="header-container">
+        <h1 class="slogan">CHERCHEZ PARMI PLUS DE 1500 RECETTES 
+            DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+        <form id="form-search">
+            <input type="text" id="search-plate" placeholder="Rechercher une recette, un ingrédient, ...">
+            <button type="submit">
+                <!-- <i class="bi bi-search"></i> -->
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-search"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+        />
+      </svg>
+            </button>
+        </form>
+        </div>        
+    </header>   
+    <main>
+        <div class="recipes-filter-container">
+            <form action="" class="filters">
+                <select name="ingredients" id="ingredients">
+                    <option value="">Ingrédients</option>
+                    <option value="beurre">Beurre</option>
+                    <option value="farine">Farine</option>
+                </select>
+                <select name="appareils" id="appareils">
+                    <option value="">Appareils</option>
+                    <option value="beurre">Beurre</option>
+                    <option value="farine">Farine</option>
+                </select>
+                <select name="ustensiles" id="ustensiles">
+                    <option value="">Ustensiles</option>
+                    <option value="beurre">Beurre</option>
+                    <option value="farine">Farine</option>
+                </select>
+            </form>
+            <h2>1500 recettes</h2>
+        </div>
+        
+        <div class="recipes-card-container">
+            <!--Here the recipes card-->
+        </div>
+    </main> 
+    <script src="data/recipes.js"></script>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
