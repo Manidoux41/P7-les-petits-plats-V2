@@ -1,3 +1,7 @@
+const searchInput = document.querySelector('#search-plate');
+const searchResults = document.querySelector('.recipes-card-container');
+
+let dataArray;
 /**
  * Creates a recipe card based on the provided recipe object.
  *
@@ -49,6 +53,7 @@ function createRecipeCard(recipe) {
     return recipeCard;  
 }
 
+
 /**
  * Display the recipes in the search results.
  *
@@ -56,15 +61,64 @@ function createRecipeCard(recipe) {
  * @return {undefined} This function does not return a value.
  */
 function displayRecipes(recipes) {
-    const searchResults = document.querySelector('.recipes-card-container');
-    searchResults.innerHTML = '';
+    searchResults.innerHTML = "";
 
+    dataArray = orderList(recipes);
     for (let index = 0; index < recipes.length; index++) {
         const recipe = recipes[index];
         const recipeCard = createRecipeCard(recipe);
         searchResults.appendChild(recipeCard);
-    }
+    }    
+}
+
+displayRecipes(recipes);
+/**
+ * Sorts the given data array in ascending order based on the name property.
+ *
+ * @param {Array} data - The array of objects to be sorted.
+ * @return {Array} The sorted array.
+ */
+function orderList(data) {
+    const orderedData = data.sort((a, b) => {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+            return -1;
+        }
+
+        return 0;
+    })
+    return orderedData;
 }
 
 // Usage
-displayRecipes(recipes);
+
+function searchRecipes(e) {
+    const value = e.target.value.toLowerCase();
+    const filteredData = dataArray.filter((data) => {
+        return data.name.toLowerCase().includes(value);
+    });
+    if(value === "") {
+        displayRecipes(recipes);
+    } else {
+        displayRecipes(filteredData);
+    }
+}
+
+searchInput.addEventListener('input', searchRecipes);
+
+
+
+/**
+ * Filters the data based on the input value and displays the filtered results.
+ *
+ * @param {Event} e - The event object that triggered the function.
+ * @return {void} This function does not return a value.
+ */
+/* function filterData(e) {
+    const value = e.target.value.toLowerCase();
+    const filteredData = dataArray.filter((data) => {
+        return data.name.toLowerCase().includes(value);
+    });
+    return displayRecipes(filteredData);
+} */
+
+
