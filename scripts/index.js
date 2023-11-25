@@ -91,6 +91,12 @@ function orderList(data) {
 
 // Usage
 
+/**
+ * Searches the recipes based on the provided input value and displays the filtered results.
+ *
+ * @param {Event} e - The event object that triggered the search.
+ * @return {void} This function does not return a value.
+ */
 function searchRecipes(e) {
     const value = e.target.value.toLowerCase();
     const filteredData = dataArray.filter((data) => {
@@ -104,21 +110,3 @@ function searchRecipes(e) {
 }
 
 searchInput.addEventListener('input', searchRecipes);
-
-
-
-/**
- * Filters the data based on the input value and displays the filtered results.
- *
- * @param {Event} e - The event object that triggered the function.
- * @return {void} This function does not return a value.
- */
-/* function filterData(e) {
-    const value = e.target.value.toLowerCase();
-    const filteredData = dataArray.filter((data) => {
-        return data.name.toLowerCase().includes(value);
-    });
-    return displayRecipes(filteredData);
-} */
-
-
