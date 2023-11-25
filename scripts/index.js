@@ -72,6 +72,7 @@ function displayRecipes(recipes) {
 }
 
 displayRecipes(recipes);
+
 /**
  * Sorts the given data array in ascending order based on the name property.
  *
